@@ -56,17 +56,20 @@ namespace EnukhinPr18
                     HttpContent responseContent = response.Content;
                     string json = await responseContent.ReadAsStringAsync();
                     RicAndMorty ricAndMorty = JsonConvert.DeserializeObject<RicAndMorty>(json);
-                    staclLayout.Children.Add(new Image() { Source = ImageSource.FromUri(new Uri(ricAndMorty.image)), HeightRequest = 200, WidthRequest = 200});
-                    staclLayout.Children.Add(new Label() { Text = "ID: " + Translate(ricAndMorty.id.ToString()), FontSize = 20});
-                    staclLayout.Children.Add(new Label() { Text = "Имя: " + Translate(ricAndMorty.name.ToString()), FontSize = 20});
-                    staclLayout.Children.Add(new Label() { Text = "Статус: " + Translate(ricAndMorty.status.ToString()), FontSize = 20});
-                    staclLayout.Children.Add(new Label() { Text = "Вид: " + Translate(ricAndMorty.species.ToString()), FontSize = 20});
-                    staclLayout.Children.Add(new Label() { Text = "Пол: " + Translate(ricAndMorty.gender.ToString()), FontSize = 20});
+                    staclLayout.Children.Add(new Image() { Source = ImageSource.FromUri(new Uri(ricAndMorty.image)), HeightRequest = 400, WidthRequest = 400 });
+                    staclLayout.Children.Add(new Label() { Text = "ID: " + Translate(ricAndMorty.id.ToString()), FontSize = 20 });
+                    staclLayout.Children.Add(new Label() { Text = "Имя: " + Translate(ricAndMorty.name.ToString()), FontSize = 20 });
+                    staclLayout.Children.Add(new Label() { Text = "Статус: " + Translate(ricAndMorty.status.ToString()), FontSize = 20 });
+                    staclLayout.Children.Add(new Label() { Text = "Вид: " + Translate(ricAndMorty.species.ToString()), FontSize = 20 });
+                    staclLayout.Children.Add(new Label() { Text = "Тип: " + Translate(ricAndMorty.type.ToString()), FontSize = 20 });
+                    staclLayout.Children.Add(new Label() { Text = "Пол: " + Translate(ricAndMorty.gender.ToString()), FontSize = 20 });
+                    staclLayout.Children.Add(new Label() { Text = "Происхождение: " + Translate(ricAndMorty.origin.name.ToString()), FontSize = 20 });
+                    staclLayout.Children.Add(new Label() { Text = "Местоположение: " + Translate(ricAndMorty.location.name.ToString()), FontSize = 20 });
 
                 }
                 catch (Exception ex)
                 {
-                    var error = new Label() { Text = ex.Message, TextColor= Color.Red};
+                    var error = new Label() { Text = ex.Message, TextColor = Color.Red };
                     staclLayout.Children.Add(error);
                 }
 

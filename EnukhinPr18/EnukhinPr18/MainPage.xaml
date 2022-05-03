@@ -7,7 +7,7 @@
             <Entry Placeholder="Введите ID" x:Name="entryNumber" Keyboard="Numeric"/>
             <Button x:Name="buttonResult" Text="Вывести результат" Clicked="ButtonResult_Clicked" />
             <StackLayout x:Name="staclLayout" HorizontalOptions="Center" VerticalOptions="Center">
-
+                
             </StackLayout>
         </StackLayout>
     </ScrollView>
